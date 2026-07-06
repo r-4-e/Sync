@@ -16,6 +16,10 @@ workflows:
           source: true
 
     scripts:
+      - name: Init submodules
+        script: |
+          git submodule update --init --recursive
+
       - name: Set up local.properties
         script: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
